@@ -17,6 +17,8 @@ ActiveRecord::Schema.define(:version => 20130520175054) do
     t.integer  "year"
     t.string   "name"
     t.string   "color"
+    t.string   "grape"
+    t.string   "flavor"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
