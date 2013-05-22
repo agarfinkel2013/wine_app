@@ -1,0 +1,26 @@
+<h1>Add a New Bottle</h1>
+
+<%=	form_tag '/bottles' do %>
+	<p>
+		<%= label_tag :name, "Name of wine" %>
+		<%= text_field_tag :name, "", size: 40, placeholder: "Enter name here..."%>
+	</p>
+
+	<p>
+		<%= label_tag :year, "Vintage" %>
+		<%= text_field_tag :year, "", size: 40, placeholder: "Year..."%>
+	</p>
+
+	<p>
+		<%= label_tag :color, "Color" %>
+		<%= text_field_tag :color, "", size: 40, placeholder: "Red, White, or Rose..."%>
+	</p>
+
+	<p>
+		<%= submit_tag "Add this wine"%>
+	</p>
+
+<% end %>
+
+
+<!-- Why isn't this enough to make it save a new bottle and post on the index page? -->

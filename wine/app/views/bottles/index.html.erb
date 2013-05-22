@@ -1,0 +1,25 @@
+<%= link_to "Add a New Bottle", "/bottles/new" %>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Bottle</th>
+      <th>Year</th>
+      <th>Color</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @bottles.each do |bottles| %>
+    <tr>
+      <td>
+        <%= link_to "Delete", "bottles/#{bottles.id}", method: 'delete' %>
+        <%= link_to "Edit", "bottles/#{bottles.id}/edit" %>
+      </td>
+      <td><%= link_to bottles.name, "/bottles/#{bottles.id}" %></td>
+      <td><%= bottles.year %></td>
+      <td><%= bottles.color %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
