@@ -5,3 +5,18 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+Bottle.destroy_all
+
+data = [{name: "Awesome Wine", year: 1980, color: "Red"}]
+
+data.each do |wine_info|
+  m = Bottle.new
+  m.name = wine_info[:name]
+  m.year = wine_info[:year]
+  m.color = wine_info[:color]
+  m.save
+end
+
+puts "There are now #{Bottle.count} wines in the database"
