@@ -13,7 +13,10 @@
   <% @bottles.each do |bottle| %>
     <tr>
       <td>
-        <%= link_to "Delete", "bottles/#{bottle.id}", method: 'delete' %>
+        <%= link_to "Delete", "bottles/#{bottle.id}", method: 'delete', data: {confirm: "Are you sure?"} %>
+
+<!-- Why is the delete not working? -->
+
         <%= link_to "Edit", "bottles/#{bottle.id}/edit" %>
       </td>
       <td><%= link_to bottle.name, "/bottles/#{bottle.id}" %></td>

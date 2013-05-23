@@ -18,11 +18,12 @@ class BottlesController < ActionController::Base
 	end
 
 	def show
-		@bottles = find_by_id(params[:id])
+		@bottles = Bottle.find_by_id(params[:id])
 	end
 
 	def update
-		@bottles = find_by_id(params[:id])
+		@bottles = Bottle.find_by_id(params[:id])
+		@bottles.name = params[:name]
 		@bottles.year = params[:year]
 		@bottles.color = params[:color]
 		@bottles.save
@@ -30,13 +31,13 @@ class BottlesController < ActionController::Base
 	end
 
 	def destroy
-		@bottles = find_by_id(params[:id])
-		@bottles.destroy
+		b = Bottle.find_by_id(params[:id])
+		b.destroy
 		redirect_to "/bottles"
 	end
 
 	def edit
-		@bottles = find_by_id(params[:id])
+		@bottles = Bottle.find_by_id(params[:id])
 	end
 
 end
