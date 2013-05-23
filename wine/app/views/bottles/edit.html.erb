@@ -1,0 +1,23 @@
+<h1>Edit a Bottle</h1>
+
+<%=	form_tag("/bottles/#{@bottles.id}", method: 'put') do %>
+	<p>
+		<%= label_tag :name, "Name of wine" %>
+		<%= text_field_tag :name, @bottles.name, size: 40, placeholder: "Enter name here..."%>
+	</p>
+
+	<p>
+		<%= label_tag :year, "Vintage" %>
+		<%= text_field_tag :year, @bottles.year	, size: 40, placeholder: "Year..."%>
+	</p>
+
+	<p>
+		<%= label_tag :color, "Color" %>
+		<%= text_field_tag :color, @bottles.color	, size: 40, placeholder: "Red, White, or Rose..."%>
+	</p>
+
+	<p>
+		<%= submit_tag "Update this wine"%>
+	</p>
+
+<% end %>
